@@ -22,6 +22,11 @@ Set-Alias -Name idle -Value Start-PythonIdle -Description "Python IDLE"
 
 # UV
 if (Get-Command -Name uv -ErrorAction SilentlyContinue) {
+  function Export-Uv-Requirements {
+    uv export --no-emit-project --no-dev --no-hashes ${Args}
+  }
+  Set-Alias -Name "uvreq" -Value Export-Uv-Requirements -Description "Export UV Requirements"
+
   (& uv --generate-shell-completion powershell) | Out-String | Invoke-Expression
 }
 
