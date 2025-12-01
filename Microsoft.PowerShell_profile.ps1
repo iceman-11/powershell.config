@@ -34,6 +34,11 @@ if (Get-Command -Name uvx -ErrorAction SilentlyContinue) {
   (& uvx --generate-shell-completion powershell) | Out-String | Invoke-Expression
 }
 
+# Zoxide
+if (Get-Command -Name zoxide -ErrorAction SilentlyContinue) {
+  Invoke-Expression (& { (zoxide init powershell | Out-String) })
+}
+
 # Chocolatey profile
 $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
 if (Test-Path($ChocolateyProfile)) {
