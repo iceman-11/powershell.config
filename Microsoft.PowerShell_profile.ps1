@@ -54,3 +54,6 @@ Try {
 Catch {
   $env:VIRTUAL_ENV_DISABLE_PROMPT = 0
 }
+
+# Exit on Ctrl+d
+Set-PSReadLineKeyHandler -Key Ctrl+d -Function DeleteCharOrExit
