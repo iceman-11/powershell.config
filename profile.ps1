@@ -22,6 +22,7 @@ $Commands = @(
   @{ Alias = "vi"; Name = "nvim.exe"; Description = "Neovim" },
   @{ Alias = "vim"; Name = "nvim.exe"; Description = "Neovim" },
   @{ Alias = "grep"; Name = "${GitPath}\usr\bin\grep.exe"; Description = "Grep" }
+  @{ Alias = "git-bash"; Name = "${GitPath}\bin\bash.exe"; Description = "Git Bash" }
 )
 
 Foreach ($Command in $Commands) {
